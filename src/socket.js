@@ -8,7 +8,7 @@ const options = {
     timeout : 10000,
     transports: ['websocket']
 };
-    return io("http://localhost:5000");
+    return io(process.env.REACT_APP_BACKEND_URL,options);
 };
 
 
