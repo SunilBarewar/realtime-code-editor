@@ -63,7 +63,7 @@ const EditorPage = () => {
       socketRef.current.off(ACTIONS.DISCONNECTED);
       socketRef.current.disconnect();
     }
-  });
+  },[]);
 
   async function copyRoomId(){
     try{
