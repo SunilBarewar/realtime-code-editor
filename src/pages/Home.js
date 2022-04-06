@@ -58,7 +58,10 @@ const Home = () => {
                 <button className='btn joinBtn' onClick={joinRoom}> Join</button>
                 <span className='createInfo'>
                     If you don't have an invite the create &nbsp;
-                    <a onClick={createNewRoom} href='' className='createNewBtn'>
+                    <a
+                    onClick={createNewRoom}
+                    href = ''  
+                    className='createNewBtn'>
                         new room
                     </a>
                 </span>
@@ -66,7 +69,7 @@ const Home = () => {
         </div>
         <footer>
             <h4> Built with 💛&nbsp; by &nbsp; 
-            <a href="" >Sunil Barewar</a>
+            <a href="https://github.com/SunilBarewar">Sunil Barewar</a>
             </h4>
         </footer>
     </div>
