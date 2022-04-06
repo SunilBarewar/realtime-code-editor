@@ -6,9 +6,9 @@ const ACTIONS = require('./src/Action');
 const path = require('path');
 const server = http.createServer(app);
 const io = new Server(server,{
-    cors : {
-            origin :'http://localhost:3000'
-        }
+    // cors : {
+    //         origin :'http://localhost:3000'
+    //     }
 })
 
 
@@ -33,7 +33,7 @@ function getAllConnectedClients(roomId){
 }
 
 io.on('connection',(socket)=>{
-   console.log("socket connected ",socket.id);
+//    console.log("socket connected ",socket.id);
 
    socket.on(ACTIONS.JOIN,({roomId,username}) =>{
         userSocketMap[socket.id] = username;
@@ -41,7 +41,7 @@ io.on('connection',(socket)=>{
         socket.join(roomId);
         // console.log(roomId);
         const clients = getAllConnectedClients(roomId);
-        console.log(clients);
+        // console.log(clients);
         clients.forEach(({socketId}) => {
             io.to(socketId).emit(ACTIONS.JOINED,{
                 clients,
@@ -80,4 +80,4 @@ io.on('connection',(socket)=>{
 
 });
 const PORT = 5000
-server.listen(PORT,()=>console.log('listening........'))
+server.listen(PORT)
