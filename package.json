@@ -21,12 +21,12 @@
   },
   "scripts": {
     "start:front": "react-scripts start",
-    "start": "npm run-script build && npm run server:prod",
+    "start": "npm run build && npm run server:prod",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "server:dev": "nodemon server.js",
-    "server:prod": "node server.js"
+    "server:prod": "node server.js",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
